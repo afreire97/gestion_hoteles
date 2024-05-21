@@ -13,7 +13,7 @@ class DistribuidorController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function listar_clientes()
     {
 
 
@@ -35,7 +35,7 @@ class DistribuidorController extends Controller
         }
 
 
-        return view('distribuidor.index', ['clientes' => $clientes]);
+        return view('distribuidores.lista_clientes', ['clientes' => $clientes]);
     }
 
     /**

@@ -11,12 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('habitaciones_precios', function (Blueprint $table) {
+        Schema::create('porcentajes', function (Blueprint $table) {
 
-            $table->id('HAB_id');
-            $table->integer('HAB_numero_habitacion');
-            $table->double('HAB_precio');
-            $table->foreignId('HAB_distribuidor_id')->constrained('distribuidores', 'DIS_id')->onDelete('cascade');
+
+
+            $table->id('POR_id');
+            $table->string('POR_nombre');
+            $table->double('POR_cifra');
+            $table->foreignId('POR_distribuidor_id')->constrained('distribuidores', 'DIS_id')->onDelete('cascade');
+
+
+
+
+
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('habitaciones_precios');
+        Schema::dropIfExists('porcentajes');
     }
 };

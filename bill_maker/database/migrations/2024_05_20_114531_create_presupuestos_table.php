@@ -15,13 +15,9 @@ return new class extends Migration
             $table->id('PRE_id');
             $table->integer('PRE_habitaciones')->default(1);
             $table->boolean('PRE_is_checkin')->default(0);
-            $table->double('PRE_checkin')->default(2);
             $table->boolean('PRE_is_pms')->default(0);
-            $table->double('PRE_pms')->default(0.25);
             $table->boolean('PRE_is_cerraduras')->default(0);
-            $table->double('PRE_cerraduras')->default(0.25);
             $table->boolean('PRE_is_gestion_cobros')->default(0);
-            $table->double('PRE_gestion_cobros')->default(0.25);
 
             // Oculto
             // se calcula en base al total anual

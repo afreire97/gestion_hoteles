@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DistribuidorController;
+use App\Http\Controllers\PresupuestoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +21,15 @@ Route::middleware('auth')->group(function () {
 
 
 
-    Route::get('/listar-clientes', [DistribuidorController::class, 'index'])->name('listarClientes');
+    Route::get('/listar-clientes', [DistribuidorController::class, 'listar_clientes'])->name('listarClientes');
 
 
 
 
+    //PRESUPUESTOS
+
+    Route::get('/presupuestos', [PresupuestoController::class, 'create'])->name('presupuestos.create');
+    Route::post('/previsualizar-presupuesto', [PresupuestoController::class, 'previsualizarPresupuesto'])->name('previsualizar');
 
 
 

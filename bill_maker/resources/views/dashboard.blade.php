@@ -38,5 +38,11 @@
       </div>
     </div>
 
+    <div class='card' style='width: 18rem;'>
+      <div class='card-body'>
+        <h5 class='card-title'>Presupuestos</h5>
+        <a href='{{route('presupuestos.create')}}' class='btn btn-primary'>Crear presupuesto</a>
+      </div>
+    </div>
 
 </x-app-layout>
