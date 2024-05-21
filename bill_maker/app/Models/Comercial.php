@@ -32,5 +32,11 @@ class Comercial extends Model
     }
 
 
+    public function clientes(){
+
+        return $this->hasMany(Cliente::class, 'CLI_comercial_id');
+    }
+
+
 
 }

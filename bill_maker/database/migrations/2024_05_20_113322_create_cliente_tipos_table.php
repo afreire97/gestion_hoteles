@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('clientes_tipos', function (Blueprint $table) {
             $table->id('CLI_TIP_id');
-            $table->string('CLI_TIP_nombre');
+            $table->enum('tipo', ['Hotel', 'Motel', 'Apartamento']);
             $table->timestamps();
         });
     }

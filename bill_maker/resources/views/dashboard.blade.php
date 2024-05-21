@@ -17,32 +17,35 @@
 
     <div class='card ms-3' style='width: 18rem;'>
 
-      <div class='card-body'>
-        <p class='card-text'>Gestiona tus cosas</p>
+        <div class='card-body'>
+            <p class='card-text'>Gestiona tus cosas</p>
 
 
-        @if (Auth::check() && Auth::user()->is_admin)
-        <a class="btn btn-info mb-1" href="">Listar distribuidores</a>
-        <a class="btn btn-info mb-1" href="{{route('listarClientes')}}">Gestión clientes</a>
-    @endif
+            @if (Auth::check() && Auth::user()->is_admin)
+                <a class="btn btn-info mb-1" href="">Listar distribuidores</a>
+                <a class="btn btn-info mb-1" href="{{ route('listarClientes') }}">Gestión clientes</a>
+            @endif
 
-    @if (Auth::check() && Auth::user()->is_distribuidor)
-        <a class="btn btn-info mb-1" href="{{route('listarClientes')}}">Gestión clientes</a>
-        <a class="btn btn-info" href="">Precios por habitación</a>
-    @endif
+            @if (Auth::check() && Auth::user()->is_distribuidor)
+                <a class="btn btn-info mb-1" href="{{ route('listarClientes') }}">Gestión clientes</a>
+                <a class="btn btn-info" href="">Precios por habitación</a>
+            @endif
+
+            @if (Auth::check() && Auth::user()->is_comercial)
+            <a class="btn btn-info mb-1" href="{{ route('listarClientes') }}">Gestión clientes</a>
+            <a class="btn btn-info" href="">Precios por habitación</a>
+            @endif
 
 
 
-
-
-      </div>
+        </div>
     </div>
 
     <div class='card' style='width: 18rem;'>
-      <div class='card-body'>
-        <h5 class='card-title'>Presupuestos</h5>
-        <a href='{{route('presupuestos.create')}}' class='btn btn-primary'>Crear presupuesto</a>
-      </div>
+        <div class='card-body'>
+            <h5 class='card-title'>Presupuestos</h5>
+            <a href='{{ route('presupuestos.create') }}' class='btn btn-primary'>Crear presupuesto</a>
+        </div>
     </div>
 
 </x-app-layout>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('TAR_id');
 
             $table->foreignId('TAR_producto_id')->constrained('productos', 'PRO_id')->onDelete('cascade');
-            $table->enum('tipo', ['DE', 'IN', 'PVP']);
+            $table->enum('tipo', ['DE', 'IN', 'PVP', 'CO']);
             $table->double('TAR_cifra');
 
             $table->timestamps();
