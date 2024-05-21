@@ -5,15 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Porcentajes extends Model
+class Tarifa extends Model
 {
     use HasFactory;
-
-
-    protected $table = 'porcentajes';
-    protected $primaryKey = 'POR_id';
-
-
-
-
 }

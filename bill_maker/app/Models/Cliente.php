@@ -29,4 +29,10 @@ class Cliente extends Model
     public function distribuidor(){
         return $this->belongsTo(Distribuidor::class, 'CLI_distribuidor_id');
     }
+
+    public function comercial(){
+        return $this->belongsTo(Comercial::class, 'CLI_comercial_id');
+    }
+
+
 }

@@ -38,6 +38,20 @@ class PresupuestoController extends Controller
 
 
 
+        $data = $request->all();
+
+
+        $distribuidor = Auth::user()->distribuidor;
+
+
+
+        if(!$distribuidor->porcentajes){
+
+
+
+
+        }
+
 
 
 

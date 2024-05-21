@@ -31,14 +31,11 @@ public function clientes(){
 }
 
 
-public function habitaciones_precio(){
-    return $this->hasMany(HabitacionesPrecio::class, 'HAB_distribuidor_id');
+public function comerciales(){
+
+    return $this->hasMany(Comercial::class, 'COM_distribuidor_id');
+
+
 }
-
-
-
-
-
-
 
 }

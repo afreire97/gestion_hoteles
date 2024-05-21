@@ -21,7 +21,8 @@ class User extends Authenticatable
         'email',
         'password',
         'is_admin',
-        'is_distribuidor'
+        'is_distribuidor',
+        'is_comercial',
     ];
 
     /**
@@ -51,4 +52,11 @@ class User extends Authenticatable
     public function distribuidor(){
         return $this->hasOne(Distribuidor::class, 'DIS_user_id');
     }
+
+    public function comercial(){
+        return $this->hasOne(Comercial::class, 'COM_user_id');
+    }
+
+
+
 }

@@ -28,9 +28,15 @@ class DistribuidorController extends Controller
 
 
             $distribuidor = $user->distribuidor;
-            Log::info("Entramos aqui" . $distribuidor);
             $clientes = $distribuidor->clientes;
-            Log::info("cLIENTES " . $clientes);
+
+
+        }if ($user->is_comercial) {
+
+
+            $comercial = $user->comercial;
+            $clientes = $comercial->clientes;
+
 
         }
 

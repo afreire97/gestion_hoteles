@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,7 +23,7 @@ class DistribuidorFactory extends Factory
             'DIS_telefono' => fake()->phoneNumber() ,
             'DIS_cif' => 'A12345678',
             'DIS_logo' => 'logo.png',
-            // 'DIS_user_id' => null,
+
 
         ];
     }
