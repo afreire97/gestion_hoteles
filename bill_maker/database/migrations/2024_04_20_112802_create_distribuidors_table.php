@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('DIS_telefono');
             $table->string('DIS_cif');
             $table->string('DIS_logo');
-            $table->foreignId('DIS_user_id')->nullable()->constrained('users')->onDelete('cascade');
+            $table->foreignId('DIS_user_id')->nullable()->constrained('users', 'id')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

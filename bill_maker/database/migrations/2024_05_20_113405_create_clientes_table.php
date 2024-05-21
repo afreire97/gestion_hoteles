@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('CLI_email');
             $table->string('CLI_cif');
 
-            $table->foreignId('CLI_distribuidor_id')->nullable()->constrained('distribuidores', 'DIS_id')->onDelete('cascade');
+            $table->foreignId('CLI_comercial_id')->nullable()->constrained('comerciales', 'COM_id')->onDelete('cascade');
 
             $table->foreignId('CLI_tipo_id')->constrained('clientes_tipos', 'CLI_TIP_id')->onDelete('cascade');
             $table->timestamps();

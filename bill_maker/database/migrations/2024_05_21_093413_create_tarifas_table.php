@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('habitaciones_precios', function (Blueprint $table) {
+        Schema::create('tarifas', function (Blueprint $table) {
+            $table->id('TAR_id');
 
-            $table->id('HAB_id');
-            $table->integer('HAB_numero_habitacion');
-            $table->double('HAB_precio');
-            $table->foreignId('HAB_distribuidor_id')->constrained('distribuidores', 'DIS_id')->onDelete('cascade');
+            $table->foreignId('TAR_producto_id')->constrained('productos', 'PRO_id')->onDelete('cascade');
+            $table->enum('tipo', ['DE', 'IN', 'PVP']);
+            $table->double('TAR_cifra');
+
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('habitaciones_precios');
+        Schema::dropIfExists('tarifas');
     }
 };

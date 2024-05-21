@@ -11,16 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('porcentajes', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
 
-
-
-            $table->id('POR_id');
-            $table->string('POR_nombre');
-            $table->double('POR_cifra');
-            $table->foreignId('POR_distribuidor_id')->constrained('distribuidores', 'DIS_id')->onDelete('cascade');
-
-
+            $table->id('PRO_id');
+            $table->string('PRO_nombre');
 
 
 
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('porcentajes');
+        Schema::dropIfExists('productos');
     }
 };
