@@ -15,6 +15,8 @@ return new class extends Migration
 
             $table->id('PRO_id');
             $table->string('PRO_nombre');
+            $table->enum('PRO_tipo', ['DE', 'IN', 'HAB', 'CO']);
+            $table->double('PRO_cifra');
 
 
 

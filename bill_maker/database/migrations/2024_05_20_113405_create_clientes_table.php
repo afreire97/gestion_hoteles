@@ -23,6 +23,8 @@ return new class extends Migration
             $table->foreignId('CLI_distribuidor_id')->nullable()->constrained('distribuidores', 'DIS_id')->onDelete('cascade');
 
             $table->foreignId('CLI_tipo_id')->constrained('clientes_tipos', 'CLI_TIP_id')->onDelete('cascade');
+
+
             $table->timestamps();
         });
     }
