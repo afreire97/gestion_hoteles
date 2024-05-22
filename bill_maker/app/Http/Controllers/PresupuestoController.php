@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Utils\CalculoPresupuestos;
 use App\Models\Cliente;
 use App\Models\EstadoPresupuesto;
 use App\Models\Presupuesto;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,7 +28,34 @@ class PresupuestoController extends Controller
         $clientes = Cliente::all();
 
         $user = Auth::user();
-        $distribuidor = $user->is_distribuidor ? $user->distribuidor : null;
+
+
+
+        if ($user->is_admin) {
+            $clientes = Cliente::all();
+
+        } if ($user->is_distribuidor!= null  ) {
+
+
+            $distribuidor = $user->distribuidor;
+            $clientes = $distribuidor->clientes;
+
+
+        }if ($user->is_comercial) {
+
+
+            $comercial = $user->comercial;
+            $clientes = $comercial->clientes;
+
+
+        }
+
+
+        $distribuidor = null;
+        $comercial = null;
+
+
+
 
         return view('presupuestos.create', [
             'clientes' => $clientes,
@@ -39,13 +68,23 @@ class PresupuestoController extends Controller
 
 
         $data = $request->all();
+        $user = Auth::user();
+
+        $numHabitaciones=$request->input('numHabitaciones');
+
+        $isCheckin=$request->has('isCheckin');
+        $isPMS=$request->has('isPMS');
+        $isCerraduras=$request->has('isCerraduras');
+        $isGestionCobros=$request->has('isGestionCobros');
+
+        if ($user->is_admin) {
 
 
-        $distribuidor = Auth::user()->distribuidor;
+            return CalculoPresupuestos::calcularPresupuestoAdmin( $isPMS, $isGestionCobros, $isCerraduras, $isCheckin, $numHabitaciones);
 
 
 
-        if(!$distribuidor->porcentajes){
+
 
 
 
@@ -53,10 +92,7 @@ class PresupuestoController extends Controller
         }
 
 
-
-
-
-
+return 'hola';
 
 
 

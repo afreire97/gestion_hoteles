@@ -36,6 +36,10 @@ class Comercial extends Model
 
         return $this->hasMany(Cliente::class, 'CLI_comercial_id');
     }
+    public function tarifas(){
+
+        return $this->hasMany(Tarifa::class, 'TAR_comercial_id');
+    }
 
 
 

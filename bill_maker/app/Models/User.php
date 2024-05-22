@@ -59,4 +59,15 @@ class User extends Authenticatable
 
 
 
+
+    public function tarifasEmisor(){
+        return $this->hasMany(Tarifa::class, 'TAR_emisor_id');
+    }
+    public function tarifasReceptor(){
+        return $this->hasMany(Tarifa::class, 'TAR_receptor_id');
+    }
+
+
+
+
 }
