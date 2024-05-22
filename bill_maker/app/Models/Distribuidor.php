@@ -37,5 +37,11 @@ public function comerciales(){
 
 
 }
+public function tarifas(){
+
+    return $this->hasMany(Tarifa::class, 'TAR_distribuidor_id');
+
+
+}
 
 }

@@ -6,28 +6,28 @@
         <form action="{{route('previsualizar')}}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="PRE_habitaciones">Habitaciones:</label>
-                <input type="number" class="form-control" id="PRE_habitaciones" name="PRE_habitaciones" value="1" min="1">
+                <label for="numHabitaciones">Habitaciones:</label>
+                <input type="number" class="form-control" id="numHabitaciones" name="numHabitaciones" value="1" min="1">
             </div>
 
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="PRE_is_checkin" name="PRE_is_checkin" value="1">
-                <label class="form-check-label" for="PRE_is_checkin">Check-in</label>
+                <input type="checkbox" class="form-check-input" id="isCheckin" name="isCheckin" value="1">
+                <label class="form-check-label" for="isCheckin">Check-in</label>
             </div>
 
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="PRE_is_pms" name="PRE_is_pms" value="1">
-                <label class="form-check-label" for="PRE_is_pms">PMS</label>
+                <input type="checkbox" class="form-check-input" id="isPMS" name="isPMS" value="1">
+                <label class="form-check-label" for="isPMS">PMS</label>
             </div>
 
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="PRE_is_cerraduras" name="PRE_is_cerraduras" value="1">
-                <label class="form-check-label" for="PRE_is_cerraduras">Cerraduras</label>
+                <input type="checkbox" class="form-check-input" id="isCerraduras" name="isCerraduras" value="1">
+                <label class="form-check-label" for="isCerraduras">Cerraduras</label>
             </div>
 
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="PRE_is_gestion_cobros" name="PRE_is_gestion_cobros" value="1">
-                <label class="form-check-label" for="PRE_is_gestion_cobros">Gestión de Cobros</label>
+                <input type="checkbox" class="form-check-input" id="isGestionCobros" name="isGestionCobros" value="1">
+                <label class="form-check-label" for="isGestionCobros">Gestión de Cobros</label>
             </div>
 
 
