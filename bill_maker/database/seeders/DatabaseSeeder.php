@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin',
+            'email' => 'admin@mail.com',
             'is_admin' => true,
             'is_distribuidor' => false,
             'is_comercial' => false,
@@ -29,8 +29,8 @@ class DatabaseSeeder extends Seeder
 
 
         $distUser = User::factory()->create([
-            'name' => 'Pepe',
-            'email' => 'pepe@mail.com',
+            'name' => 'distribuidor',
+            'email' => 'distribuidor@mail.com',
             'is_admin' => false,
             'is_distribuidor' => true,
             'is_comercial' => false,
@@ -38,21 +38,21 @@ class DatabaseSeeder extends Seeder
 
 
 
-       $pepe= Distribuidor::factory()->create([
+       $distribuidor= Distribuidor::factory()->create([
 
             'DIS_user_id' => $distUser->id,
         ]);
 
 
         $comUser = User::factory()->create([
-            'name' => 'Juan',
-            'email' => 'juan@mail.com',
+            'name' => 'comercial',
+            'email' => 'comercial@mail.com',
             'is_admin' => false,
             'is_distribuidor' => false,
             'is_comercial' => true,
         ]);
 
-        $juan = Comercial::factory()->create([
+        $comercial = Comercial::factory()->create([
             'COM_user_id' => $comUser->id,
         ]);
 
@@ -60,12 +60,12 @@ class DatabaseSeeder extends Seeder
 
         // Crear 30 clientes asociados a $pepe
         $clientesAsociadosDistribuidor = Cliente::factory(2)->create([
-            'CLI_distribuidor_id' => $pepe->DIS_id,
+            'CLI_distribuidor_id' => $distribuidor->DIS_id,
         ]);
 
         // Crear 30 clientes sin asociar a ningún distribuidor
         $clientesSinAsociar = Cliente::factory(10)->create([
-            'CLI_comercial_id' => $juan->COM_id,
+            'CLI_comercial_id' => $comercial->COM_id,
         ]);
 
 
