@@ -28,6 +28,11 @@ insert into tarifas  (TAR_producto_id,tipo,TAR_cifra,created_at,updated_at) VALU
 (12, 'PVP', 13.50, now(), now()),
 (13, 'PVP', 12, now(), now());
 
+INSERT INTO estados_presupuestos (EST_nombre, created_at, updated_at) VALUES
+('en preparacion', NOW(), NOW()),
+('en curso', NOW(), NOW()),
+('aceptado', NOW(), NOW()),
+('cancelado', NOW(), NOW());
 
 INSERT INTO clientes_tipos (tipo,created_at,updated_at) VALUES 
 ('Hotel', now(), now()),
