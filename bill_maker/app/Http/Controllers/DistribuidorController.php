@@ -10,39 +10,6 @@ use Illuminate\Support\Facades\Log;
 
 class DistribuidorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function listar_clientes()
-    {
-
-
-        $user = Auth::user();
-
-        $clientes = null;
-
-        if ($user->is_admin) {
-            $clientes = Cliente::all();
-
-        } if ($user->is_distribuidor) {
-
-
-            $distribuidor = $user->distribuidor;
-            $clientes = $distribuidor->clientes;
-
-
-        }if ($user->is_comercial) {
-
-
-            $comercial = $user->comercial;
-            $clientes = $comercial->clientes;
-
-
-        }
-
-
-        return view('distribuidores.lista_clientes', ['clientes' => $clientes]);
-    }
 
     /**
      * Show the form for creating a new resource.

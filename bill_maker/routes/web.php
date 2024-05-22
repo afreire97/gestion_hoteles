@@ -3,6 +3,8 @@
 use App\Http\Controllers\DistribuidorController;
 use App\Http\Controllers\PresupuestoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TarController;
+use App\Http\Controllers\UtilsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,10 +22,17 @@ Route::middleware('auth')->group(function () {
 
 
 
+    //CLIENTES
+    Route::get('/listar-clientes', [UtilsController::class, 'listar_clientes'])->name('listarClientes');
 
-    Route::get('/listar-clientes', [DistribuidorController::class, 'listar_clientes'])->name('listarClientes');
+
+    //DISTRIBUIDORES
+    Route::get('/listar-distribuidores', [UtilsController::class, 'listar_distribuidores'])->name('listarDistribuidores');
 
 
+    //PRODUCTOS
+    Route::get('/editar-precios/{cliente_id}', [UtilsController::class, 'editar_precios'])->name('editarPrecios');
+    Route::post('/tarifas', [TarController ::class, 'store'])->name('tarifas.store');
 
 
     //PRESUPUESTOS
