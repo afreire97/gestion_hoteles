@@ -89,6 +89,17 @@ return [
         'fr' => 'Français', // Añade francés
         'de' => 'Deutsch', // Añade alemán
     ],
+    'currencies' => [
+        'en' => 'USD',
+        'es' => 'EUR',
+        'fr' => 'EUR',
+        'de' => 'EUR',
+    ],
+    'currency_exchange_rates' => [
+        'USD' => 1.0, // Tasa de cambio base: 1 USD = 1.0 USD
+        'EUR' => 0.915, // Ejemplo de tasa de cambio EUR a USD
+        // Agrega más tasas de cambio según necesites
+    ],
 
     /*
     |--------------------------------------------------------------------------
