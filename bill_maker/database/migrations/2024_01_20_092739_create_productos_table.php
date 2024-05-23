@@ -17,9 +17,7 @@ return new class extends Migration
             $table->string('PRO_nombre');
             $table->enum('PRO_tipo', ['DE', 'IN', 'HAB', 'CO']);
             $table->double('PRO_cifra');
-
-
-
+            // $table->foreignId('PRO_pais_id')->constrained('paises', 'PAI_id')->onDelete('cascade'); // Clave foránea
             $table->timestamps();
         });
     }

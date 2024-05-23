@@ -14,8 +14,8 @@ return new class extends Migration {
             $table->id('TAR_id');
 
             $table->foreignId('TAR_producto_id')->constrained('productos', 'PRO_id')->onDelete('cascade');
-            $table->foreignId('TAR_emisor_id')->nullable()->constrained('users', 'user_id')->onDelete('cascade');
-            $table->foreignId('TAR_receptor_id')->nullable()->constrained('users','user_id')->onDelete('cascade');
+            $table->foreignId('TAR_emisor_id')->nullable()->constrained('users')->onDelete('cascade');
+            $table->foreignId('TAR_receptor_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->double('TAR_resultante');
 
             $table->timestamps();

@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clientes_tipos', function (Blueprint $table) {
-            $table->id('CLI_TIP_id');
-            $table->string('CLI_tipo')->unique();
+        Schema::create('paises', function (Blueprint $table) {
+            $table->id('PAI_id');
+            $table->string('PAI_nombre');
+            $table->string('PAI_moneda');
+            $table->string('PAI_idioma');
+            $table->string('PAI_iso');
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clientes_tipos');
+        Schema::dropIfExists('paises');
     }
 };

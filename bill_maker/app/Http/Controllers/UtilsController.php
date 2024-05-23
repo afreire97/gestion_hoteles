@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\Distribuidor;
+use App\Models\Producto;
 use App\Models\Productos;
-use App\Models\Tarifa;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class UtilsController extends Controller
 {
