@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\CulturaController;
 use App\Http\Controllers\DistribuidorController;
 use App\Http\Controllers\PresupuestoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -35,5 +38,18 @@ Route::middleware('auth')->group(function () {
 
 
 });
+
+
+Route::middleware(SetLocale::class)->group(function () {
+
+    Route::get('/monedas', [CulturaController::class, 'index'])->name('dashboardMonedas');
+    Route::post('setLocale', [CulturaController::class, 'setLocale'])->name('setLocale');
+
+
+});
+
+
+
+
 
 require __DIR__.'/auth.php';
