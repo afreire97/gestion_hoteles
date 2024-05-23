@@ -23,4 +23,5 @@ INSERT INTO estados_presupuestos (EST_nombre, created_at, updated_at) VALUES
 INSERT INTO clientes_tipos (CLI_tipo,created_at,updated_at) VALUES 
 ('Hotel', now(), now()),
 ('Motel', now(), now()),
-('Apartamento', now(), now());
+('Apartamento', now(), now()),
+('Urbanizacion', now(), now());
